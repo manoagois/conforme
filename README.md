@@ -20,7 +20,7 @@
 <p align="center">
   <a href="#instalação">Instalação</a> ·
   <a href="#como-usar">Como usar</a> ·
-  <a href="#as-8-skills">Skills</a> ·
+  <a href="#as-9-skills">Skills</a> ·
   <a href="#cobertura-normativa">Cobertura</a> ·
   <a href="#como-não-errar">Como não errar</a> ·
   <a href="#como-não-quebrar">Como não quebrar</a> ·
@@ -53,6 +53,7 @@ flowchart LR
     D --> G[conforme-apps]
     D --> H[conforme-ia]
     D --> I[conforme-lgpd]
+    I --> DOC[conforme-documentos<br/>minutas a partir do código]
     E & F & G & H & I --> R{Revisor independente<br/>tenta derrubar cada achado}
     R -- confirmado --> J[.conforme/relatorio.md<br/>achados com lei e precedente]
     R -- precisa validar --> Q[pergunta ao usuário]
@@ -77,7 +78,7 @@ mesma ferramenta usada na compra. CDC art. 49: 7 dias do recebimento, devoluçã
 **Veredito:** confirmado por revisor independente
 ```
 
-## As 8 skills
+## As 9 skills
 
 | Skill | Quando dispara | O que olha |
 |---|---|---|
@@ -87,6 +88,7 @@ mesma ferramenta usada na compra. CDC art. 49: 7 dias do recebimento, devoluçã
 | `conforme-apps` | app web ou mobile, comunidade, público jovem | Cookies antes do consentimento, registros de acesso, exclusão de conta, moderação pela tese do STF, ECA Digital, acessibilidade |
 | `conforme-ia` | chatbot, agente, LLM, decisão automática | Aviso de que é IA, PII no prompt, transferência internacional, revisão de decisão automatizada, tools com efeito real, prompt injection |
 | `conforme-lgpd` | dados pessoais em qualquer projeto | PII em log, segredos, cartão, senha, IDOR e RLS, direitos do titular em 15 dias, retenção, trilha para incidente |
+| `conforme-documentos` | "redige a política", "termos de uso", "contrato de operador", "vazou dado" | Minutas a partir do que o código faz: política de privacidade, termos de uso, contrato controlador e operador, registro de operações, relatório de impacto, teste de legítimo interesse, comunicação de incidente à ANPD e ao titular |
 | `conforme-corrigir` | "corrige esses achados" | Linha de base, um achado por commit, migration aditiva, feature flag em cobrança, teste de regressão, nada de push sem pedido |
 | `conforme-pr` | "revisa esse PR" | Comenta só o que o diff muda, com norma e bloco `suggestion`, numa revisão única no GitHub |
 
@@ -137,6 +139,7 @@ nossa cobrança recorrente está certa? e o cancelamento?
 meu chatbot de WhatsApp está ok com a LGPD?
 revisa o PR 42 e comenta o que fere a lei
 corrige os achados CF-001 a CF-004 sem quebrar nada
+redige a política de privacidade e os termos de uso a partir do código
 ```
 
 O relatório fica em `.conforme/relatorio.md`. Coloque `.conforme/` no `.gitignore` se não quiser versioná-lo.
@@ -155,7 +158,7 @@ bash skills/conforme/scripts/scan.sh caminho/do/projeto
 | Decreto 7.962/2013 | identificação do fornecedor, resumo do pedido, confirmação, arrependimento pelo mesmo canal com estorno |
 | Lei 10.962/2004 | preço à vista junto ao produto com fonte 12, desconto por meio de pagamento visível |
 | Decreto 11.034/2022 | SAC e cancelamento imediato em serviços regulados |
-| LGPD (Lei 13.709/2018) e resoluções da ANPD | segurança, necessidade, direitos do titular, consentimento, retenção, incidente em 3 dias úteis |
+| LGPD (Lei 13.709/2018) e resoluções da ANPD | segurança, necessidade, direitos do titular, consentimento, retenção, incidente em 3 dias úteis (Res. 15/2024 conferida no DOU) |
 | Marco Civil (Lei 12.965/2014) | registros de acesso por 6 meses, consentimento destacado, exclusão ao fim da relação |
 | ECA Digital (Lei 15.211/2025) | padrão protetivo, verificação de idade sem autodeclaração, contas vinculadas, loot boxes, perfilamento |
 | LBI (Lei 13.146/2015) | acessibilidade de sites e apps |
@@ -204,7 +207,7 @@ A skill `conforme-corrigir` segue um protocolo fixo:
 
 ## Relação com outros projetos
 
-- [goul4rt/lgpd-skills](https://github.com/goul4rt/lgpd-skills) cobre a LGPD documental (ROPA, RIPD, DPA, política, incidente). O conforme foca no que o código faz e em outras leis além da LGPD. Os dois se complementam; a skill `conforme-lgpd` indica o outro para documentos.
+- [goul4rt/lgpd-skills](https://github.com/goul4rt/lgpd-skills) é a origem dos modelos de política, contrato de operador, registro de operações, relatório de impacto, teste de legítimo interesse e comunicações de incidente usados em `conforme-documentos` (MIT, ver [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)). No conforme, os modelos são preenchidos com fatos levantados no código, sem valores pré-prontos.
 - [leoparreira21/ctresb-leis](https://github.com/leoparreira21/ctresb-leis) é a base de conferência das leis e precedentes.
 
 ## Desenvolvimento
@@ -226,6 +229,7 @@ conforme/
 │   ├── conforme-apps/
 │   ├── conforme-ia/
 │   ├── conforme-lgpd/
+│   ├── conforme-documentos/   minutas e modelos
 │   ├── conforme-corrigir/
 │   └── conforme-pr/
 ├── tests/                     fixture e testes

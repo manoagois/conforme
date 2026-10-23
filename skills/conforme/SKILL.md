@@ -47,6 +47,7 @@ Ative a skill de cada tipo identificado. Se o seu agente não ativa skill por no
 | App web ou mobile, conteúdo de usuário, menores, acessibilidade | `conforme-apps` |
 | Chatbot, agente, LLM, decisão automatizada | `conforme-ia` |
 | Dados pessoais em qualquer projeto (sempre rode) | `conforme-lgpd` |
+| Política, termos, contratos, registro de operações, incidente | `conforme-documentos` |
 
 ### 4. Revisar cada achado
 
@@ -60,7 +61,7 @@ No chat, mostre só o resumo: contagem por severidade dos confirmados, quantos p
 
 ### 6. Oferecer a correção
 
-Pergunte quais achados corrigir. Ao receber a resposta, siga `conforme-corrigir`. Para revisar um pull request em vez do repositório inteiro, use `conforme-pr`.
+Pergunte quais achados corrigir. Ao receber a resposta, siga `conforme-corrigir`. Documento faltando (política, termos, contrato de operador, registro de operações) se resolve com `conforme-documentos`, que redige a minuta a partir do código. Para revisar um pull request em vez do repositório inteiro, use `conforme-pr`.
 
 ## Limites
 

@@ -98,9 +98,18 @@ Vale para fornecedores de **serviços regulados pelo Poder Executivo federal** (
 | Art. 48 | Comunicação de incidente à ANPD e ao titular |
 | Art. 52 | Sanções; multa de até 2% do faturamento no Brasil, limitada a R$ 50 milhões por infração |
 
-Resoluções ANPD mais usadas: CD/ANPD nº 2/2022 (agentes de pequeno porte), nº 4/2023 (dosimetria), nº 15/2024 (incidente: **3 dias úteis** para comunicar, registro por 5 anos), nº 18/2024 (encarregado), nº 19/2024 (transferência internacional e cláusulas-padrão). Guias ANPD: cookies (2022) e legítimo interesse (2024).
+Resolução CD/ANPD nº 15/2024 (incidente), conferida no DOU em 2026-10-23:
 
-Para conformidade documental completa (ROPA, RIPD, DPA, política), use [lgpd-skills](https://github.com/goul4rt/lgpd-skills). Esta skill foca no que o código faz.
+| Artigo | Regra |
+|---|---|
+| Art. 5º | Risco ou dano relevante: afeta significativamente direitos **e** envolve ao menos um de: dados sensíveis; crianças, adolescentes ou idosos; financeiros; autenticação; sigilo legal, judicial ou profissional; larga escala |
+| Art. 6º | Comunicar a ANPD em **3 dias úteis** do conhecimento de que o incidente afetou dados pessoais; § 2º lista 12 itens; § 3º complemento em até 20 dias úteis |
+| Art. 9º | Comunicar o titular em **3 dias úteis**, com 7 itens, linguagem simples, de forma direta e individual quando possível; se inviável, divulgação pública |
+| Art. 10 | Registrar todo incidente, comunicado ou não, por no mínimo **5 anos** |
+
+Outras resoluções ANPD [conferir texto]: CD/ANPD nº 2/2022 (agentes de pequeno porte), nº 4/2023 (dosimetria), nº 18/2024 (encarregado), nº 19/2024 (transferência internacional e cláusulas-padrão). Guias ANPD: cookies (2022) e legítimo interesse (2024).
+
+Documentos (política, contrato de operador, registro de operações, relatório de impacto) são redigidos pela skill `conforme-documentos`.
 
 ## ECA Digital, Lei nº 15.211/2025
 

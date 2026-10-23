@@ -1,13 +1,13 @@
 ---
 name: conforme-lgpd
-description: Revisão de LGPD no nível do código para qualquer projeto brasileiro. Encontra dado pessoal em log, segredo no repositório, dado de cartão salvo, CPF sem proteção, coleta além do necessário, ausência de endpoint de direitos do titular (acesso, correção, exclusão, portabilidade, prazo de 15 dias), consentimento sem registro ou sem revogação, compartilhamento com terceiros sem aviso (STJ REsp 1.758.799/MG), retenção sem prazo, controle de acesso fraco e falta de trilha para incidente (Res. CD/ANPD 15/2024, 3 dias úteis). Use para "LGPD no código", "dados pessoais", "vazamento", "estou seguro com dados?", "PII", "direito de exclusão". Para documentos (ROPA, RIPD, DPA, política), indique lgpd-skills.
+description: Revisão de LGPD no nível do código para qualquer projeto brasileiro. Encontra dado pessoal em log, segredo no repositório, dado de cartão salvo, CPF sem proteção, coleta além do necessário, ausência de endpoint de direitos do titular (acesso, correção, exclusão, portabilidade, prazo de 15 dias), consentimento sem registro ou sem revogação, compartilhamento com terceiros sem aviso (STJ REsp 1.758.799/MG), retenção sem prazo, controle de acesso fraco e falta de trilha para incidente (Res. CD/ANPD 15/2024, 3 dias úteis). Use para "LGPD no código", "dados pessoais", "vazamento", "estou seguro com dados?", "PII", "direito de exclusão". Para documentos, use conforme-documentos.
 ---
 
 # Conforme: LGPD no código
 
 Normas em `../conforme/references/legislacao.md`. Precedentes em `../conforme/references/jurisprudencia.md`.
 
-Foco: o que o código faz com dados pessoais. Documentação de conformidade (ROPA, RIPD, DPA, política de privacidade, encarregado) fica com o projeto [lgpd-skills](https://github.com/goul4rt/lgpd-skills), que complementa este.
+Foco: o que o código faz com dados pessoais. Documentos (política de privacidade, termos, contrato de operador, registro de operações, relatório de impacto, teste de legítimo interesse, comunicação de incidente) ficam com `conforme-documentos`, que redige a partir dos fatos levantados aqui.
 
 ## Onde procurar
 

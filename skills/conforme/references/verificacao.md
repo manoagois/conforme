@@ -36,7 +36,7 @@ O acervo avisa que os textos são conversões e não substituem o Diário Oficia
 - STJ: pesquisa de jurisprudência em `https://scon.stj.jus.br/SCON/` e precedentes qualificados em `https://processo.stj.jus.br/repetitivos/`
 - STF: `https://portal.stf.jus.br/jurisprudencia/` e temas em `https://portal.stf.jus.br/jurisprudenciaRepercussao/`
 - CNJ, Banco Nacional de Precedentes: `https://pangeabnp.pdpj.jus.br/`
-- ANPD: `https://www.gov.br/anpd/`
+- ANPD: `https://www.gov.br/anpd/`. Resoluções da ANPD não estão no acervo ctresb-leis: confira o texto publicado no Diário Oficial em `https://www.in.gov.br/` (busca pelo número da resolução)
 
 ## 3. O que registrar no achado
 
