@@ -1,0 +1,25 @@
+{
+  "name": "conforme",
+  "description": "Agentes que leem o seu código e apontam, com lei e jurisprudência brasileira conferidas, o que fere CDC, LGPD, Marco Civil, ECA Digital e regras de e-commerce, SaaS, apps e IA. Propõem a correção e só aplicam com testes passando.",
+  "version": "0.1.0",
+  "author": {
+    "name": "manoagois",
+    "url": "https://github.com/manoagois"
+  },
+  "homepage": "https://github.com/manoagois/conforme",
+  "repository": "https://github.com/manoagois/conforme",
+  "license": "MIT",
+  "keywords": [
+    "lgpd",
+    "cdc",
+    "compliance",
+    "brazil",
+    "ecommerce",
+    "saas",
+    "marco-civil",
+    "eca-digital",
+    "jurisprudencia",
+    "code-review",
+    "agent-skills"
+  ]
+}

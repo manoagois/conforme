@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="360" viewBox="0 0 1280 360" role="img" aria-label="Conforme: lei brasileira aplicada ao seu código">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F6FAF8"/>
+      <stop offset="1" stop-color="#E6F2EC"/>
+    </linearGradient>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M32 0H0V32" fill="none" stroke="#0F7B5F0D" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1280" height="360" rx="20" fill="url(#g)"/>
+  <rect width="1280" height="360" rx="20" fill="url(#grid)"/>
+  <g transform="translate(96 92)" fill="none" stroke="#0F7B5F" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M88 8v160M40 168h96"/>
+    <path d="M16 40h144"/>
+    <path d="M16 40 0 100h32zM160 40l-16 60h32z"/>
+    <path d="M0 100a16 12 0 0 0 32 0M144 100a16 12 0 0 0 32 0"/>
+    <path d="M62 128l-14 14 14 14M114 128l14 14-14 14" stroke="#0B1412"/>
+  </g>
+  <text x="330" y="168" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="88" font-weight="700" letter-spacing="-2" fill="#0B1412">conforme</text>
+  <text x="334" y="222" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="28" fill="#4A5C55">Lei brasileira aplicada ao seu código.</text>
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="17" fill="#0F7B5F">
+    <text x="334" y="280">CDC · LGPD · Marco Civil · ECA Digital · Decreto 7.962 · STJ · STF</text>
+  </g>
+</svg>

@@ -1,0 +1,31 @@
+name: Precedente novo ou desatualizado
+description: Sugira uma lei, súmula, tema ou decisão para entrar (ou sair) das referências.
+labels: [jurisprudencia]
+body:
+  - type: input
+    id: referencia
+    attributes:
+      label: Referência
+      description: Ex.: STJ, Tema 929; STF, Tema 987; Lei 10.962/2004, art. 2º, III
+    validations:
+      required: true
+  - type: input
+    id: fonte
+    attributes:
+      label: Link da fonte oficial
+      description: Planalto, STJ, STF, CNJ ou ANPD. Sem fonte oficial, o item não entra.
+    validations:
+      required: true
+  - type: textarea
+    id: tese
+    attributes:
+      label: Tese ou regra, com o texto oficial
+    validations:
+      required: true
+  - type: textarea
+    id: impacto
+    attributes:
+      label: O que muda no código
+      description: Que tela, fluxo ou dado é afetado.
+    validations:
+      required: true

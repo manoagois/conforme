@@ -1,0 +1,44 @@
+{
+  "name": "conforme",
+  "version": "0.1.0",
+  "description": "Agentes que leem o seu código e apontam, com lei e jurisprudência brasileira conferidas, o que fere CDC, LGPD, Marco Civil, ECA Digital e regras de e-commerce, SaaS, apps e IA. Propõem a correção e só aplicam com testes passando.",
+  "author": {
+    "name": "manoagois",
+    "url": "https://github.com/manoagois"
+  },
+  "homepage": "https://github.com/manoagois/conforme",
+  "repository": "https://github.com/manoagois/conforme",
+  "license": "MIT",
+  "keywords": [
+    "lgpd",
+    "cdc",
+    "compliance",
+    "brazil",
+    "ecommerce",
+    "saas",
+    "marco-civil",
+    "eca-digital",
+    "jurisprudencia",
+    "code-review",
+    "agent-skills"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Conforme",
+    "shortDescription": "Lei brasileira aplicada ao seu código",
+    "longDescription": "Agentes que leem o seu código e apontam, com lei e jurisprudência brasileira conferidas, o que fere CDC, LGPD, Marco Civil, ECA Digital e regras de e-commerce, SaaS, apps e IA. Propõem a correção e só aplicam com testes passando.",
+    "developerName": "manoagois",
+    "category": "Compliance",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "defaultPrompt": [
+      "Audite este projeto com a lei brasileira.",
+      "Revise o checkout e a assinatura: o que dá Procon?"
+    ],
+    "websiteURL": "https://github.com/manoagois/conforme",
+    "brandColor": "#0F7B5F"
+  }
+}

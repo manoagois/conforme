@@ -1,0 +1,16 @@
+name: testes
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  testes:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Shellcheck
+        run: shellcheck skills/conforme/scripts/scan.sh tests/run.sh
+      - name: Testes
+        run: bash tests/run.sh
