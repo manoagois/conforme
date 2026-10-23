@@ -9,6 +9,7 @@ Objetivo: corrigir o achado e provar que nada que funcionava parou de funcionar.
 
 ## Antes de tocar no código
 
+0. **Só corrija achado confirmado** pela revisão independente (`../conforme/references/revisao-independente.md`). Achado sem veredito ou "precisa validar" volta para revisão ou para a pergunta ao usuário.
 1. **Leia o achado e o código inteiro envolvido**: a função, quem chama (`grep` pelo nome), testes existentes, tipos, migrations relacionadas.
 2. **Descubra os comandos de verificação** do projeto: `test`, `build`, `typecheck`, `lint`, CI em `.github/workflows`. Se não houver nenhum, diga ao usuário e combine o mínimo (ao menos build e um teste novo).
 3. **Rode a linha de base** e guarde o resultado. Teste que já falhava antes não é culpa sua, mas precisa constar no relatório.
@@ -39,7 +40,7 @@ Objetivo: corrigir o achado e provar que nada que funcionava parou de funcionar.
 2. Se algo quebrou: corrija ou reverta. Não entregue vermelho.
 3. Atualize `.conforme/relatorio.md`: marque o achado como corrigido, com commit e comandos rodados.
 4. Atualize documentação que a mudança afeta (README, política, termos, changelog).
-5. Relate em uma linha por achado: corrigido, testado com quais comandos, e o que ficou pendente.
+5. Feche com as quatro listas do relatório (`../conforme/references/formato-achado.md`): **atualizado** (achado e commit), **testado** (comandos e resultado), **pendente** e **não verificado**. Também no chat, uma linha por lista.
 
 ## Nunca
 

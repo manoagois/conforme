@@ -15,8 +15,9 @@ Normas e precedentes nas referências da skill `conforme` (`../conforme/referenc
 2. **Classificar os arquivos** pelo domínio (e-commerce, SaaS, app, IA, dados pessoais) e ler as skills de domínio correspondentes.
 3. **Ler o contexto**, não só as linhas alteradas: a função inteira e quem a chama. Um diff pequeno pode remover uma proteção que estava em outra linha.
 4. **Comentar só o que o diff introduz ou piora.** Problema antigo fora do diff vai, no máximo, em um comentário geral com "pré-existente".
-5. **Escrever comentários** no formato abaixo.
-6. **Publicar** só se o usuário pedir. Por padrão, mostre os comentários no chat.
+5. **Revisar cada achado** com `../conforme/references/revisao-independente.md`. Só confirmado vira comentário em linha. "Precisa validar" vira pergunta no comentário geral. Rejeitado não aparece.
+6. **Escrever comentários** no formato abaixo.
+7. **Publicar** só se o usuário pedir. Por padrão, mostre os comentários no chat.
 
 ## Formato do comentário
 

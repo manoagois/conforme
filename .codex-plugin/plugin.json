@@ -1,6 +1,6 @@
 {
   "name": "conforme",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Agentes que leem o seu código e apontam, com lei e jurisprudência brasileira conferidas, o que fere CDC, LGPD, Marco Civil, ECA Digital e regras de e-commerce, SaaS, apps e IA. Propõem a correção e só aplicam com testes passando.",
   "author": {
     "name": "manoagois",

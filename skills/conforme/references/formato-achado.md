@@ -17,6 +17,7 @@ Todo achado segue este formato. Achado sem arquivo e linha, ou sem norma, não e
 ```
 **Como provar que não quebrou:** teste `renew.test.ts` cobre assinatura com e sem aviso; build e typecheck verdes.
 **Confiança:** alta (lei) · média (aplicação do precedente ao caso)
+**Veredito:** confirmado por revisor independente (`src/billing/renew.ts:48` lido; nenhum aviso em outro job)
 ````
 
 ## Severidade
@@ -46,16 +47,32 @@ Grave em `.conforme/relatorio.md`:
 **Projeto:** nome · **Tipo:** e-commerce | SaaS | app | agente de IA · **Data:** AAAA-MM-DD
 **Stack detectada:** ...
 **Escopo lido:** pastas e arquivos (e o que ficou de fora)
+**Revisão:** independente por subagente (CRÍTICA e ALTA) | sem agente independente
 
 ## Resumo
-| Severidade | Qtde |
+| Severidade | Confirmados |
 |---|---|
 | CRÍTICA | 0 |
 ...
 
+Precisa validar: N · Rejeitados na revisão: N (ver `.conforme/rejeitados.md`)
+
 ## Achados
-(um bloco por achado, do mais grave ao mais leve)
+(só confirmados, um bloco por achado, do mais grave ao mais leve)
+
+## Precisa validar
+| Id | Achado | Pergunta ao usuário |
+|---|---|---|
+| CF-007 | Renovação sem aviso de 30 dias | O produto vende para consumidor final ou só para empresas? |
 
 ## Fora do alcance desta análise
 Itens que dependem de documento, contrato ou operação, não de código.
+
+## Fechamento
+- **Atualizado:** o que foi alterado nesta execução, com commit (ou "nada, só análise")
+- **Testado:** comandos rodados e resultado (ou "nada rodado")
+- **Pendente:** achados confirmados sem correção, perguntas sem resposta
+- **Não verificado:** o que não foi lido, conferido ou testado, e por quê (pasta fora do escopo, precedente não conferido, sem acesso a produção, sem testes no projeto)
 ```
+
+O fechamento é obrigatório e honesto: nada aparece como feito sem ter sido feito. Lista vazia se escreve "nada".

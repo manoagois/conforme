@@ -22,6 +22,7 @@
   <a href="#como-usar">Como usar</a> ·
   <a href="#as-8-skills">Skills</a> ·
   <a href="#cobertura-normativa">Cobertura</a> ·
+  <a href="#como-não-errar">Como não errar</a> ·
   <a href="#como-não-quebrar">Como não quebrar</a> ·
   <a href="#contribuindo">Contribuir</a>
 </p>
@@ -36,8 +37,9 @@ O **conforme** faz o caminho inverso:
 
 1. **Lê o código de verdade.** Todo achado tem `arquivo:linha` e o que aquele trecho faz.
 2. **Cita só o que foi conferido.** Leis e precedentes vêm de referências checadas contra o texto oficial. O que não foi conferido aparece marcado, e o agente é proibido de citar número fora da lista sem conferir na hora.
-3. **Propõe a correção em diff**, no padrão do seu projeto.
-4. **Só aplica com prova.** Roda a linha de base de testes, aplica um achado por commit, escreve teste de regressão e roda tudo de novo.
+3. **Outro agente tenta derrubar cada achado.** Só o que sobrevive chega até você. O que depende de um fato que o código não mostra vira pergunta, não alarme.
+4. **Propõe a correção em diff**, no padrão do seu projeto.
+5. **Só aplica com prova.** Roda a linha de base de testes, aplica um achado por commit, escreve teste de regressão e roda tudo de novo.
 
 ## Como funciona
 
@@ -51,7 +53,10 @@ flowchart LR
     D --> G[conforme-apps]
     D --> H[conforme-ia]
     D --> I[conforme-lgpd]
-    E & F & G & H & I --> J[.conforme/relatorio.md<br/>achados com lei e precedente]
+    E & F & G & H & I --> R{Revisor independente<br/>tenta derrubar cada achado}
+    R -- confirmado --> J[.conforme/relatorio.md<br/>achados com lei e precedente]
+    R -- precisa validar --> Q[pergunta ao usuário]
+    R -- rejeitado --> X[.conforme/rejeitados.md]
     J --> K[conforme-corrigir<br/>diff mínimo + testes]
     J --> L[conforme-pr<br/>comentários no pull request]
 ```
@@ -69,6 +74,7 @@ mesma ferramenta usada na compra. CDC art. 49: 7 dias do recebimento, devoluçã
 `POST /orders/:id/withdrawal` que pede o estorno ao gateway (art. 5º, § 3º) e envia confirmação (§ 4º).
 **Como provar que não quebrou:** `withdrawal.test.ts` cobre dentro e fora do prazo; build e typecheck verdes.
 **Confiança:** alta
+**Veredito:** confirmado por revisor independente
 ```
 
 ## As 8 skills
@@ -169,6 +175,20 @@ Textos e fontes em [`jurisprudencia.md`](skills/conforme/references/jurisprudenc
 
 A conferência usa o acervo aberto [ctresb-leis](https://github.com/leoparreira21/ctresb-leis), que reúne legislação federal, estadual e jurisprudência dos tribunais superiores em Markdown com link para a fonte oficial. O agente consulta o arquivo pontual quando precisa conferir algo fora da lista ([como](skills/conforme/references/verificacao.md)).
 
+## Como não errar
+
+Quem encontra o problema não é quem confirma. Cada achado CRÍTICO ou ALTO vai para um agente novo, sem acesso ao raciocínio do primeiro, que abre o arquivo e tenta provar que o achado está errado: a linha existe? o problema já está resolvido em outro componente? o código é alcançável? a lei citada diz isso mesmo? Achados médios e baixos passam por uma segunda leitura do zero.
+
+| Veredito | O que acontece |
+|---|---|
+| Confirmado | entra no relatório e pode ser corrigido |
+| Precisa validar | vira uma pergunta objetiva para você (ex.: "vende para consumidor final?") |
+| Rejeitado | sai do relatório, com o motivo em `.conforme/rejeitados.md` |
+
+Todo relatório e toda correção terminam com quatro listas: **atualizado**, **testado**, **pendente** e **não verificado**. Nada aparece como feito sem ter sido feito.
+
+Método inspirado na validação de candidatos da [cloudflare/security-audit-skill](https://github.com/cloudflare/security-audit-skill).
+
 ## Como não quebrar
 
 A skill `conforme-corrigir` segue um protocolo fixo:
@@ -193,13 +213,13 @@ A skill `conforme-corrigir` segue um protocolo fixo:
 bash tests/run.sh
 ```
 
-O teste confere que o mapeador encontra os problemas plantados em `tests/fixtures/loja`, que toda skill tem `name` igual à pasta e `description`, que os links internos existem e que os manifestos são JSON válido. O CI roda o mesmo teste e o shellcheck.
+O teste confere que o mapeador encontra os problemas plantados em `tests/fixtures/loja`, que toda skill tem `name` igual à pasta e `description`, que os links internos existem que os manifestos são JSON válido e têm a mesma versão. O CI roda o mesmo teste e o shellcheck.
 
 ```
 conforme/
 ├── skills/
 │   ├── conforme/              orquestrador
-│   │   ├── references/        legislação, jurisprudência, verificação, formato
+│   │   ├── references/        legislação, jurisprudência, verificação, formato, revisão
 │   │   └── scripts/scan.sh    mapeador de pontos quentes
 │   ├── conforme-ecommerce/
 │   ├── conforme-saas/

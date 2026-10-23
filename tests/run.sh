@@ -33,5 +33,13 @@ for j in .claude-plugin/plugin.json .claude-plugin/marketplace.json .codex-plugi
   python3 -c "import json,sys; json.load(open(sys.argv[1]))" "$j" || { echo "FALHOU: JSON inválido $j"; fail=1; }
 done
 
+versions="$(python3 -c '
+import json
+fs=[".claude-plugin/plugin.json",".codex-plugin/plugin.json",".cursor-plugin/plugin.json","gemini-extension.json"]
+v={json.load(open(f))["version"] for f in fs}
+v.add(json.load(open(".claude-plugin/marketplace.json"))["plugins"][0]["version"])
+print(len(v))')"
+[ "$versions" = 1 ] || { echo "FALHOU: manifestos com versões diferentes"; fail=1; }
+
 [ "$fail" = 0 ] && echo "ok: todos os testes passaram"
 exit "$fail"

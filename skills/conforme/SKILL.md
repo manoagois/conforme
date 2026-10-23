@@ -48,13 +48,17 @@ Ative a skill de cada tipo identificado. Se o seu agente não ativa skill por no
 | Chatbot, agente, LLM, decisão automatizada | `conforme-ia` |
 | Dados pessoais em qualquer projeto (sempre rode) | `conforme-lgpd` |
 
-### 4. Escrever o relatório
+### 4. Revisar cada achado
 
-Use o formato de `references/formato-achado.md`. Grave em `.conforme/relatorio.md` na raiz do projeto analisado. Ordene do mais grave ao mais leve. Inclua o que ficou fora do escopo lido.
+Siga `references/revisao-independente.md`. Um revisor sem acesso ao seu raciocínio tenta derrubar cada achado e devolve **confirmado**, **precisa validar** ou **rejeitado**. CRÍTICA e ALTA vão para subagente novo; MÉDIA e BAIXA, para uma segunda passada sua relendo o arquivo do zero.
 
-No chat, mostre só o resumo: contagem por severidade, os 3 a 5 achados mais graves em uma linha cada, e o caminho do relatório.
+### 5. Escrever o relatório
 
-### 5. Oferecer a correção
+Use o formato de `references/formato-achado.md`. Grave em `.conforme/relatorio.md` na raiz do projeto analisado. Só achados confirmados entram em "Achados", do mais grave ao mais leve. "Precisa validar" vai em seção própria com a pergunta. Rejeitados vão para `.conforme/rejeitados.md`. Termine com o **fechamento** em quatro listas.
+
+No chat, mostre só o resumo: contagem por severidade dos confirmados, quantos precisam validar e quantos foram rejeitados, os 3 a 5 achados mais graves em uma linha cada, as perguntas pendentes e o caminho do relatório.
+
+### 6. Oferecer a correção
 
 Pergunte quais achados corrigir. Ao receber a resposta, siga `conforme-corrigir`. Para revisar um pull request em vez do repositório inteiro, use `conforme-pr`.
 
@@ -71,4 +75,5 @@ Pergunte quais achados corrigir. Ao receber a resposta, siga `conforme-corrigir`
 - [`references/jurisprudencia.md`](references/jurisprudencia.md): precedentes conferidos e pendentes
 - [`references/verificacao.md`](references/verificacao.md): como conferir na hora
 - [`references/formato-achado.md`](references/formato-achado.md): formato de achado e relatório
+- [`references/revisao-independente.md`](references/revisao-independente.md): como cada achado é confirmado ou derrubado
 - [`scripts/scan.sh`](scripts/scan.sh): mapeador de pontos quentes

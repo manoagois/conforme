@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.2.0 · 2026-10-23
+
+- **Revisão independente de achados** (`references/revisao-independente.md`): um revisor sem acesso ao raciocínio de quem encontrou tenta derrubar cada achado. Vereditos confirmado, precisa validar (vira pergunta ao usuário, sem severidade) e rejeitado (vai para `.conforme/rejeitados.md`). CRÍTICA e ALTA usam subagente novo; MÉDIA e BAIXA, segunda leitura do zero. Método inspirado na cloudflare/security-audit-skill.
+- `conforme-corrigir` e `conforme-pr` só agem sobre achados confirmados.
+- **Fechamento em quatro listas** no relatório e na correção: atualizado, testado, pendente, não verificado.
+- Teste confere que todos os manifestos têm a mesma versão.
+
 ## 0.1.0 · 2026-10-23
 
 Primeira versão.
